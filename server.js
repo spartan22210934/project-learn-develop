@@ -16,6 +16,10 @@ app.get("/",(req,res)=>{
     console.log("Hello from backend");
 })
 
+app.post("/test",(req,res)=>{
+    console.log("Received POST request with body:", req.body);
+    res.json({ message: "POST request received", data: req.body });
+});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
     connectDB();
